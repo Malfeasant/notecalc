@@ -1,0 +1,1 @@
+A really basic calculator for cash- enter number of notes of various denominations, get the per-denomination totals and a grand total.
