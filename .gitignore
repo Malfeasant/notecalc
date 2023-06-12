@@ -21,3 +21,6 @@ hs_err_pid*
 
 # vscode
 /.vscode/
+
+# side effect of packaging
+/dependency-reduced-pom.xml
