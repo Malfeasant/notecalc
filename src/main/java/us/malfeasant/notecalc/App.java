@@ -18,7 +18,7 @@ import javafx.util.converter.NumberStringConverter;
  */
 public class App extends Application {
     enum Denominations {
-        ONE(1), TWO(2), FIVE(5), TEN(10), TWENTY(20), FIFTY(50), HUNDRED(100);
+        ONE(1), /*TWO(2),*/ FIVE(5), TEN(10), TWENTY(20), FIFTY(50), HUNDRED(100);
         final int value;
         Denominations(int v) {
             value = v;
