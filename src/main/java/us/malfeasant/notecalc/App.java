@@ -61,7 +61,8 @@ public class App extends Application {
                         sb.append(matcher.group());
                     }
                     // if no valid numbers were found, string will be empty at this point
-                    if (sb.isEmpty()) {
+//                    if (sb.isEmpty()) {   // Not valid for Java 11, was added at 15...
+                    if (sb.length() == 0) {
                         sb.append("0");
                     }
                     // Limit to 5 characters
