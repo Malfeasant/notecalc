@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>us.malfeasant</groupId>
     <artifactId>notecalc</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>11</maven.compiler.release>
         <jfx.version>17</jfx.version>
         <mainClassName>us.malfeasant.notecalc.Launch</mainClassName>
     </properties>
