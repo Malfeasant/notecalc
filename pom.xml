@@ -8,40 +8,43 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
-        <jfx.version>17</jfx.version>
+        <jfx.version>11</jfx.version>
         <mainClassName>us.malfeasant.notecalc.Launch</mainClassName>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${jfx.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>${jfx.version}</version>
-            <classifier>win</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>${jfx.version}</version>
-            <classifier>linux</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>${jfx.version}</version>
-            <classifier>mac</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>${jfx.version}</version>
-            <classifier>mac-aarch64</classifier>
-        </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>fatjar</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-graphics</artifactId>
+                    <version>${jfx.version}</version>
+                    <classifier>win</classifier>
+                </dependency>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-graphics</artifactId>
+                    <version>${jfx.version}</version>
+                    <classifier>linux</classifier>
+                </dependency>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-graphics</artifactId>
+                    <version>${jfx.version}</version>
+                    <classifier>mac</classifier>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
@@ -83,13 +86,6 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>${mainClassName}</mainClass>
-                            <stripDebug>true</stripDebug>
-                            <compress>2</compress>
-                            <noHeaderFiles>true</noHeaderFiles>
-                            <noManPages>true</noManPages>
-                            <launcher>${project.artifactId}</launcher>
-                            <jlinkImageName>${project.artifactId}</jlinkImageName>
-                            <jlinkZipName>${project.artifactId}</jlinkZipName>
                         </configuration>
                     </execution>
                 </executions>
